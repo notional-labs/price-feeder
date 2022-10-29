@@ -9,10 +9,10 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/CosmosContracts/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
 	"github.com/rs/zerolog"
 
-	"github.com/CosmosContracts/juno/v11/util/coin"
+	"github.com/notional-labs/price-feeder/oracle/util"
 )
 
 const (
@@ -247,11 +247,11 @@ func (p *MexcProvider) setTickerPair(symbol string, ticker MexcTicker) {
 	p.mtx.Lock()
 	defer p.mtx.Unlock()
 
-	price, err := coin.NewDecFromFloat(ticker.LastPrice)
+	price, err := util.NewDecFromFloat(ticker.LastPrice)
 	if err != nil {
 		p.logger.Warn().Err(err).Msg("mexc: failed to parse ticker price")
 	}
-	volume, err := coin.NewDecFromFloat(ticker.Volume)
+	volume, err := util.NewDecFromFloat(ticker.Volume)
 	if err != nil {
 		p.logger.Warn().Err(err).Msg("mexc: failed to parse ticker volume")
 	}
@@ -266,11 +266,11 @@ func (p *MexcProvider) setCandlePair(candleResp MexcCandleResponse) {
 	p.mtx.Lock()
 	defer p.mtx.Unlock()
 
-	close, err := coin.NewDecFromFloat(candleResp.Metadata.Close)
+	close, err := util.NewDecFromFloat(candleResp.Metadata.Close)
 	if err != nil {
 		p.logger.Warn().Err(err).Msg("mexc: failed to parse candle close")
 	}
-	volume, err := coin.NewDecFromFloat(candleResp.Metadata.Volume)
+	volume, err := util.NewDecFromFloat(candleResp.Metadata.Volume)
 	if err != nil {
 		p.logger.Warn().Err(err).Msg("mexc: failed to parse candle volume")
 	}

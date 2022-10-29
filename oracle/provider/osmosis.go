@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/CosmosContracts/juno/v11/util/coin"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/util"
 )
 
 const (
@@ -115,12 +115,12 @@ func (p OsmosisProvider) GetTickerPrices(pairs ...types.CurrencyPair) (map[strin
 			return nil, fmt.Errorf("duplicate token found in Osmosis response: %s", symbol)
 		}
 
-		price, err := coin.NewDecFromFloat(tr.Price)
+		price, err := util.NewDecFromFloat(tr.Price)
 		if err != nil {
 			return nil, fmt.Errorf("failed to read Osmosis price (%f) for %s", tr.Price, symbol)
 		}
 
-		volume, err := coin.NewDecFromFloat(tr.Volume)
+		volume, err := util.NewDecFromFloat(tr.Volume)
 		if err != nil {
 			return nil, fmt.Errorf("failed to read Osmosis volume (%f) for %s", tr.Volume, symbol)
 		}
@@ -175,8 +175,8 @@ func (p OsmosisProvider) GetCandlePrices(pairs ...types.CurrencyPair) (map[strin
 				continue
 			}
 			candlePrices = append(candlePrices, types.CandlePrice{
-				Price:  coin.MustNewDecFromFloat(responseCandle.Close),
-				Volume: coin.MustNewDecFromFloat(responseCandle.Volume),
+				Price:  util.MustNewDecFromFloat(responseCandle.Close),
+				Volume: util.MustNewDecFromFloat(responseCandle.Volume),
 				// convert osmosis timestamp seconds -> milliseconds
 				TimeStamp: SecondsToMilli(responseCandle.Time),
 			})

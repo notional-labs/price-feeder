@@ -5,8 +5,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/CosmosContracts/price-feeder/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -5,8 +5,8 @@ import (
 	"sort"
 	"time"
 
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/notional-labs/price-feeder/oracle/provider"
 )
 
 var minimumTimeWeight = sdk.MustNewDecFromStr("0.2")

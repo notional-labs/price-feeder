@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/CosmosContracts/juno/v11/util"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/util"
 	"github.com/rs/zerolog"
 )
 

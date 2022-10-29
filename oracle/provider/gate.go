@@ -13,7 +13,7 @@ import (
 	"github.com/gorilla/websocket"
 	"github.com/rs/zerolog"
 
-	"github.com/CosmosContracts/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
 )
 
 const (

@@ -12,11 +12,11 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/CosmosContracts/price-feeder/config"
-	"github.com/CosmosContracts/price-feeder/oracle"
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
-	v1 "github.com/CosmosContracts/price-feeder/router/v1"
 	"github.com/cosmos/cosmos-sdk/telemetry"
+	"github.com/notional-labs/price-feeder/config"
+	"github.com/notional-labs/price-feeder/oracle"
+	"github.com/notional-labs/price-feeder/oracle/provider"
+	v1 "github.com/notional-labs/price-feeder/router/v1"
 )
 
 var (

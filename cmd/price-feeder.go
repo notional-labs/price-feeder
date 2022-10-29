@@ -20,13 +20,13 @@ import (
 	"github.com/spf13/cobra"
 	"golang.org/x/sync/errgroup"
 
-	"github.com/CosmosContracts/price-feeder/config"
-	"github.com/CosmosContracts/price-feeder/oracle"
-	"github.com/CosmosContracts/price-feeder/oracle/client"
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
-	v1 "github.com/CosmosContracts/price-feeder/router/v1"
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/notional-labs/price-feeder/config"
+	"github.com/notional-labs/price-feeder/oracle"
+	"github.com/notional-labs/price-feeder/oracle/client"
+	"github.com/notional-labs/price-feeder/oracle/provider"
+	v1 "github.com/notional-labs/price-feeder/router/v1"
 )
 
 const (

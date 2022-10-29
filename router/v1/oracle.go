@@ -3,8 +3,8 @@ package v1
 import (
 	"time"
 
-	"github.com/CosmosContracts/price-feeder/oracle"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/notional-labs/price-feeder/oracle"
 )
 
 // Oracle defines the Oracle interface contract that the v1 router depends on.

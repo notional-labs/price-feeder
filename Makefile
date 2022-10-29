@@ -23,9 +23,9 @@ endif
 ##                              Build / Install                              ##
 ###############################################################################
 
-ldflags = -X github.com/CosmosContracts/price-feeder/cmd.Version=$(VERSION) \
-		  -X github.com/CosmosContracts/price-feeder/cmd.Commit=$(COMMIT) \
-		  -X github.com/CosmosContracts/price-feeder/cmd.SDKVersion=$(SDK_VERSION)
+ldflags = -X github.com/notional-labs/price-feeder/cmd.Version=$(VERSION) \
+		  -X github.com/notional-labs/price-feeder/cmd.Commit=$(COMMIT) \
+		  -X github.com/notional-labs/price-feeder/cmd.SDKVersion=$(SDK_VERSION)
 
 BUILD_FLAGS := -ldflags '$(ldflags)'
 

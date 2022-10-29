@@ -6,9 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/CosmosContracts/price-feeder/config"
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
 	"github.com/cosmos/cosmos-sdk/telemetry"
+	"github.com/notional-labs/price-feeder/config"
+	"github.com/notional-labs/price-feeder/oracle/provider"
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/require"
 )

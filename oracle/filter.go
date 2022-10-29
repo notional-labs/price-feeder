@@ -1,9 +1,9 @@
 package oracle
 
 import (
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/notional-labs/price-feeder/oracle/provider"
+	"github.com/notional-labs/price-feeder/oracle/types"
 	"github.com/rs/zerolog"
 )
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/CosmosContracts/price-feeder/cmd"
+	"github.com/notional-labs/price-feeder/cmd"
 )
 
 func main() {

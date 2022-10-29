@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	"github.com/CosmosContracts/juno/v11/x/oralce/util"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/util"
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/require"
 )

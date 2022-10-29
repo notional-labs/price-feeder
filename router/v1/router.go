@@ -10,9 +10,9 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/zerolog"
 
-	"github.com/CosmosContracts/price-feeder/config"
-	"github.com/CosmosContracts/price-feeder/pkg/httputil"
-	"github.com/CosmosContracts/price-feeder/router/middleware"
+	"github.com/notional-labs/price-feeder/config"
+	"github.com/notional-labs/price-feeder/pkg/httputil"
+	"github.com/notional-labs/price-feeder/router/middleware"
 )
 
 const (

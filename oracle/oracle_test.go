@@ -11,10 +11,10 @@ import (
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/CosmosContracts/price-feeder/config"
-	"github.com/CosmosContracts/price-feeder/oracle/client"
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/config"
+	"github.com/notional-labs/price-feeder/oracle/client"
+	"github.com/notional-labs/price-feeder/oracle/provider"
+	"github.com/notional-labs/price-feeder/oracle/types"
 )
 
 type mockProvider struct {

@@ -18,12 +18,12 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 
 	oracletypes "github.com/CosmosContracts/juno/v11/x/oracle/types"
-	"github.com/CosmosContracts/price-feeder/config"
-	"github.com/CosmosContracts/price-feeder/oracle/client"
-	"github.com/CosmosContracts/price-feeder/oracle/provider"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
-	pfsync "github.com/CosmosContracts/price-feeder/pkg/sync"
 	"github.com/cosmos/cosmos-sdk/telemetry"
+	"github.com/notional-labs/price-feeder/config"
+	"github.com/notional-labs/price-feeder/oracle/client"
+	"github.com/notional-labs/price-feeder/oracle/provider"
+	"github.com/notional-labs/price-feeder/oracle/types"
+	pfsync "github.com/notional-labs/price-feeder/pkg/sync"
 )
 
 // We define tickerSleep as the minimum timeout between each oracle loop. We

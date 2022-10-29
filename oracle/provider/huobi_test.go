@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/CosmosContracts/juno/v11/util/coin"
-	"github.com/CosmosContracts/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/types"
+	"github.com/notional-labs/price-feeder/oracle/util"
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/require"
 )
@@ -37,8 +37,8 @@ func TestHuobiProvider_GetTickerPrices(t *testing.T) {
 		prices, err := p.GetTickerPrices(types.CurrencyPair{Base: "ATOM", Quote: "USDT"})
 		require.NoError(t, err)
 		require.Len(t, prices, 1)
-		require.Equal(t, coin.MustNewDecFromFloat(lastPrice), prices["ATOMUSDT"].Price)
-		require.Equal(t, coin.MustNewDecFromFloat(volume), prices["ATOMUSDT"].Volume)
+		require.Equal(t, util.MustNewDecFromFloat(lastPrice), prices["ATOMUSDT"].Price)
+		require.Equal(t, util.MustNewDecFromFloat(volume), prices["ATOMUSDT"].Volume)
 	})
 
 	t.Run("valid_request_multi_ticker", func(t *testing.T) {
@@ -70,10 +70,10 @@ func TestHuobiProvider_GetTickerPrices(t *testing.T) {
 		)
 		require.NoError(t, err)
 		require.Len(t, prices, 2)
-		require.Equal(t, coin.MustNewDecFromFloat(lastPriceAtom), prices["ATOMUSDT"].Price)
-		require.Equal(t, coin.MustNewDecFromFloat(volume), prices["ATOMUSDT"].Volume)
-		require.Equal(t, coin.MustNewDecFromFloat(lastPriceLuna), prices["LUNAUSDT"].Price)
-		require.Equal(t, coin.MustNewDecFromFloat(volume), prices["LUNAUSDT"].Volume)
+		require.Equal(t, util.MustNewDecFromFloat(lastPriceAtom), prices["ATOMUSDT"].Price)
+		require.Equal(t, util.MustNewDecFromFloat(volume), prices["ATOMUSDT"].Volume)
+		require.Equal(t, util.MustNewDecFromFloat(lastPriceLuna), prices["LUNAUSDT"].Price)
+		require.Equal(t, util.MustNewDecFromFloat(volume), prices["LUNAUSDT"].Volume)
 	})
 
 	t.Run("invalid_request_invalid_ticker", func(t *testing.T) {
