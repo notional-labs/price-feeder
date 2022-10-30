@@ -16,15 +16,18 @@ base = "ATOM"
 threshold = "1.5"
 
 [[deviation_thresholds]]
+base = "JUNO"
+threshold = "1.5"
+
+[[deviation_thresholds]]
 base = "USDC"
 threshold = "1.5"
 
 [[currency_pairs]]
 base = "USDT"
 providers = [
-  "kraken",
+  "coinbase",
   "ftx",
-  "coinbase"
 ]
 quote = "USD"
 
@@ -32,6 +35,7 @@ quote = "USD"
 base = "ATOM"
 providers = [
   "okx",
+  "binance"
 ]
 quote = "USDT"
 
@@ -40,8 +44,31 @@ base = "ATOM"
 providers = [
   "kraken",
   "ftx",
+  "osmosis",
 ]
 quote = "USD"
+
+[[currency_pairs]]
+base = "JUNO"
+providers = [
+  "osmosis",
+]
+quote = "USD"
+
+[[currency_pairs]]
+base = "JUNO"
+providers = [
+  "bitget",
+]
+quote = "USDT"
+
+[[currency_pairs]]
+base = "JUNO"
+providers = [
+  "bitget",
+]
+quote = "USDT"
+
 
 [[currency_pairs]]
 base = "USDC"
