@@ -1,6 +1,6 @@
 module github.com/notional-labs/price-feeder
 
-go 1.17
+go 1.18
 
 require (
 	github.com/CosmosContracts/juno/v11 v11.0.1-0.20221028032430-3958f855e5e2
@@ -17,6 +17,7 @@ require (
 	github.com/spf13/cobra v1.6.0
 	github.com/spf13/viper v1.13.0
 	github.com/stretchr/testify v1.8.1
+	github.com/tendermint/spm v0.1.9
 	github.com/tendermint/tendermint v0.34.22
 	golang.org/x/sync v0.0.0-20220929204114-8fcdb60fdcc0
 	google.golang.org/grpc v1.50.1
@@ -186,7 +187,6 @@ require (
 	github.com/nishanths/exhaustive v0.8.3 // indirect
 	github.com/nishanths/predeclared v0.2.2 // indirect
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
-	github.com/onsi/ginkgo v1.16.4 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.5 // indirect
 	github.com/petermattis/goid v0.0.0-20180202154549-b0b1615b78e5 // indirect

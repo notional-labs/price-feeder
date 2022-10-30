@@ -14,6 +14,7 @@ import (
 
 	input "github.com/cosmos/cosmos-sdk/client/input"
 	"github.com/mitchellh/mapstructure"
+	"github.com/tendermint/spm/cosmoscmd"
 
 	"github.com/gorilla/mux"
 	"github.com/rs/zerolog"
@@ -42,7 +43,7 @@ const (
 var rootCmd = &cobra.Command{
 	Use:   "price-feeder [config-file]",
 	Args:  cobra.ExactArgs(1),
-	Short: "price-feeder is a side-car process for providing Umee's on-chain oracle with price data",
+	Short: "price-feeder is a side-car process for providing Juno's on-chain oracle with price data",
 	Long: `A side-car process that Umee validators must run in order to provide
 Umee's on-chain price oracle with price information. The price-feeder performs
 two primary functions. First, it is responsible for obtaining price information
@@ -102,6 +103,8 @@ func priceFeederCmdHandler(cmd *cobra.Command, args []string) error {
 	if err != nil {
 		return err
 	}
+
+	cosmoscmd.SetPrefixes("juno")
 
 	err = config.CheckProviderMins(cmd.Context(), logger, cfg)
 	if err != nil {

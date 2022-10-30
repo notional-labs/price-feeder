@@ -9,8 +9,8 @@ import (
 	"os"
 	"time"
 
-	umeeapp "github.com/CosmosContracts/juno/v11/app"
-	umeeparams "github.com/CosmosContracts/juno/v11/app/params"
+	junoapp "github.com/CosmosContracts/juno/v11/app"
+	junoparams "github.com/CosmosContracts/juno/v11/app/params"
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/rpc"
@@ -39,7 +39,7 @@ type (
 		OracleAddrString    string
 		ValidatorAddr       sdk.ValAddress
 		ValidatorAddrString string
-		Encoding            umeeparams.EncodingConfig
+		Encoding            junoparams.EncodingConfig
 		GasPrices           string
 		GasAdjustment       float64
 		GRPCEndpoint        string
@@ -67,11 +67,11 @@ func NewOracleClient(
 	grpcEndpoint string,
 	gasAdjustment float64,
 ) (OracleClient, error) {
+
 	oracleAddr, err := sdk.AccAddressFromBech32(oracleAddrString)
 	if err != nil {
 		return OracleClient{}, err
 	}
-
 	oracleClient := OracleClient{
 		Logger:              logger.With().Str("module", "oracle_client").Logger(),
 		ChainID:             chainID,
@@ -84,12 +84,13 @@ func NewOracleClient(
 		OracleAddrString:    oracleAddrString,
 		ValidatorAddr:       sdk.ValAddress(validatorAddrString),
 		ValidatorAddrString: validatorAddrString,
-		Encoding:            umeeapp.MakeEncodingConfig(),
+		Encoding:            junoapp.MakeEncodingConfig(),
 		GasAdjustment:       gasAdjustment,
 		GRPCEndpoint:        grpcEndpoint,
 	}
 
 	clientCtx, err := oracleClient.CreateClientContext()
+
 	if err != nil {
 		return OracleClient{}, err
 	}
