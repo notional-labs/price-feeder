@@ -44,8 +44,8 @@ var rootCmd = &cobra.Command{
 	Use:   "price-feeder [config-file]",
 	Args:  cobra.ExactArgs(1),
 	Short: "price-feeder is a side-car process for providing Juno's on-chain oracle with price data",
-	Long: `A side-car process that Umee validators must run in order to provide
-Umee's on-chain price oracle with price information. The price-feeder performs
+	Long: `A side-car process that Juno validators must run in order to provide
+Juno's on-chain price oracle with price information. The price-feeder performs
 two primary functions. First, it is responsible for obtaining price information
 from various reliable data sources, e.g. exchanges, and exposing this data via
 an API. Secondly, the price-feeder consumes this data and periodically submits
